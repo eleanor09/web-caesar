@@ -43,14 +43,15 @@ form="""
 
 def index():
 
- return form.format('')
+ return form.format("")
 
 @app.route("/", methods=['POST'])
 
 def encrpyt():
     rot= int(request.form['rot'])
     text= request.form['text']
-    return '<h1>,'+ rotate_string.format() + '</h1>'
+    rotated = rotate_string(text, rot)
+    return form.format(rotated)
 
 
 
